@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="App.js"></script>
+</head>
+
+<body>
+
+    <form name="Form" class="formBox" onsubmit="return Submit()">
+
+        <h1>Info Area</h1>
+
+
+        
+        <!--Top Info-->
+        <div class="userBox">
+            <input type="text" id="name" name="name" required>
+            <label for="name">Name</label>
+        </div>
+
+        <div class="userBox">
+            <input type="text" id="lastName" name="lastName" required>
+            <label for="name">Last Name</label>
+        </div>
+
+        <div class="userBox">
+            <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="userBox">
+            <input type="date" name="DateOf" id="DateOf" value="2000-00-00" min="1900-01-01" max="2020-05-13" />
+            <label for="email">Date of birth</label>
+        </div>
+
+
+
+        <!--Checkbox-->
+        <div class="infoBox" style="color: #fff">
+            <input type="radio" name="Gender" id="Gender" value="Male" />
+            <label id="label"> Male </label>
+
+            <input type="radio" name="Gender" id="Gender" value="Female" />
+            <label id="label"> Female </label>
+
+            <input type="radio" name="Gender" id="Gender" value="Private" />
+            <label id="label"> Private </label>
+        </div>
+
+
+
+        <!--Text area not resizable-->
+        <br><div class="userBox">
+        <textarea  id="TextArea" name="TextArea" placeholder="Write something!" cols="33" rows="8"></textarea>
+        </div>
+
+
+        
+        <!--Output box, use the Info button to receive information about what you just wrote -->
+        <br><p id="outBox"></p>
+
+        <div id="btnContainer">
+            <button type="submit" id="submitBtn">SUBMIT</button>
+            <button type="reset" id="resetBtn">RESET</button>
+            <button type="button" id="infoForm" onclick="Information()">?</button>
+        </div>
+
+    </form>
+</body>
+
+</html>
