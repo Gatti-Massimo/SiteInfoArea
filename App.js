@@ -1,3 +1,5 @@
+var mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 function Submit() {
 
     var name = Form.name.value;
@@ -7,12 +9,16 @@ function Submit() {
     var gender = Form.Gender.value;
     var textArea = Form.TextArea.value;
 
-    //Double check that every field has been filled
+    //Double check that every field has been filled, !! date check not working !!
     if (name != "" && lastName != "" && email != "" && date != "" && gender != "" && textArea != "") {
-        document.getElementById("outBox").innerHTML = "We have received your email!";
-    }
-    else{
 
+        if (!mailformat.test(email)) {
+
+            alert("Wrong email format!");
+        } else {
+            document.getElementById("outBox").innerHTML = "We have received your email!";
+        }
+    } else {
         document.getElementById("outBox").innerHTML = "Fill all the fields!";
     }
     return false;
